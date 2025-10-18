@@ -17,7 +17,7 @@ services:
       context: ./backend-springbootapp-30156
       dockerfile: backend.Dockerfile
     ports:
-      - "1977:2000"
+      - "2025:2000"
     depends_on:
       - mysqldb
     restart: on-failure
@@ -28,7 +28,7 @@ services:
       context: ./frontend-reactapp-30156
       dockerfile: frontend.Dockerfile
     ports:
-      - "3000:80"
+      - "2001:80"
     depends_on:
       - backend
 
