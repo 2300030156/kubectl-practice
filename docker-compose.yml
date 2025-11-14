@@ -3,7 +3,7 @@ services:
     container_name: mysql-db
     image: mysql:8
     environment:
-      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: productdb
     
     ports:
@@ -12,9 +12,9 @@ services:
       - mysql-data:/var/lib/mysql   # volume added here
 
   backend:
-    container_name: springboot
+    container_name: backend-8upjj
     build:
-      context: ./backend-springbootapp-30156
+      context: ./backend-8upjj
       dockerfile: backend.Dockerfile
     ports:
       - "2025:2000"
@@ -23,9 +23,9 @@ services:
     restart: on-failure
 
   frontend:
-    container_name: react
+    container_name: frontend-8upjj
     build:
-      context: ./frontend-reactapp-30156
+      context: ./frontend-8upjj
       dockerfile: frontend.Dockerfile
     ports:
       - "2001:80"
